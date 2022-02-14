@@ -8,4 +8,4 @@ export const getMinSquaredNumber = (arr) => {
   console.log(result);
   return result;
 };
-getMinSquaredNumber([-777, 3, -2, 6, 45, -20]);
+getMinSquaredNumber([]);
