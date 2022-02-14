@@ -6,8 +6,8 @@ it("shuld get squared numbers", () => {
 });
 
 it("shuld get odd numbers", () => {
-  const result = GetOddNumbers([1, 2, 3]);
-  expect(result).toEqual([1, 3]);
+  const result = GetOddNumbers([1, 2, 3, 4, 5]);
+  expect(result).toEqual([1, 3, 5]);
 });
 it("shuld get sum numbers", () => {
   const result = getSum(2, 8);
