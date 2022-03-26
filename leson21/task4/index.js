@@ -10,18 +10,18 @@ export const getDescription = () => {
   console.dir(getDescriptionText.innerText);
   return getDescriptionText.innerText;
 };
-getDescription();
+//getDescription();
 
-export const getPlans = () => {
-  const getPlansText = document.querySelector('.getPlans');
-  console.dir(getPlansText.innerHTML);
-  return getPlansText.innerHTML;
-};
-getPlans();
+// export const getPlans = () => {
+//   const getPlansText = document.querySelector('.getPlans');
+//   console.dir(getPlansText.innerHTML);
+//   return getPlansText.innerHTML;
+// };
+// getPlans();
 
-export const getGoal = () => {
-  const getGoal = document.querySelector('.goal');
-  console.dir(getGoal.outerHTML);
-  return getGoal.outerHTML;
-};
-getGoal();
+// export const getGoal = () => {
+//   const getGoal = document.querySelector('.goal');
+//   console.dir(getGoal.outerHTML);
+//   return getGoal.outerHTML;
+// };
+// getGoal();
