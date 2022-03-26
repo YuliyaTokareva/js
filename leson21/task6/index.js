@@ -7,4 +7,4 @@ export const setButton = buttonText => {
   //console.dir((getText.innetHTML = buttonText));
   return newHtml;
 };
-setButton('<button>button text</button>');
+//setButton('<button>button text</button>');
