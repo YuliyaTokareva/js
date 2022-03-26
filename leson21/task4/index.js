@@ -13,7 +13,7 @@ export const getDescription = () => {
 //getDescription();
 
 export const getPlans = () => {
-  const getPlansText = document.querySelector('.getPlans');
+  const getPlansText = document.querySelector('.plans');
   //console.dir(getPlansText.innerHTML);
   return getPlansText.innerHTML;
 };
