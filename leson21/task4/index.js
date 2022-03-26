@@ -1,6 +1,7 @@
 export const getTitle = () => {
-  console.dir(document.querySelector('.title'));
-  return document.querySelector('.title');
+  const getText = document.querySelector('.title');
+  //console.dir(document.querySelector('.title'));
+  return getText.textContent;
 };
 // getTitle();
 // export const getDescription = () => {
