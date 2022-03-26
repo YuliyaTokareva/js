@@ -5,4 +5,4 @@ export const setButton = buttonText => {
   //console.dir((getText.innetHTML = buttonText));
   return getText.innerHTML;
 };
-setButton('<button>button text</button>');
+//setButton('<button>button text</button>');
