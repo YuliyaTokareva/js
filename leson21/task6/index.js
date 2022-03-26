@@ -3,6 +3,6 @@ export const setButton = buttonText => {
   //getText.textContent = buttonText;
   getText.innerHTML = buttonText;
   //console.dir((getText.innetHTML = buttonText));
-  return getText.textContent, getText.innerHTML;
+  return getText.innerHTML;
 };
 setButton('<button>button text</button>');
