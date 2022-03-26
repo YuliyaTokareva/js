@@ -1,6 +1,6 @@
 export const getTitle = () => {
   const getText = document.querySelector('.title');
-  console.dir(getText.textContent);
+  //console.dir(getText.textContent);
   return getText.textContent;
 };
 getTitle();
