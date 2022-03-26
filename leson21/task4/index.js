@@ -1,21 +1,27 @@
 export const getTitle = () => {
   const getText = document.querySelector('.title');
-  //console.dir(document.querySelector('.title'));
+  console.dir(getText.textContent);
   return getText.textContent;
 };
-// getTitle();
-// export const getDescription = () => {
-//   console.dir(document.querySelector('.about').innerText);
-//   return document.querySelector('.about').innerText;
-// };
-// getDescription();
-// export const getPlans = () => {
-//   console.dir(document.querySelector('.getPlans').innerHTML);
-//   return document.querySelector('.getPlans').innerHTML;
-// };
-// getPlans();
-// export const getGoal = () => {
-//   console.dir(document.querySelector('.goal').outerHTML);
-//   return document.querySelector('.goal').outerHTML;
-// };
-// getGoal();
+getTitle();
+
+export const getDescription = () => {
+  const getDescriptionText = document.querySelector('.about');
+  console.dir(getDescriptionText.innerText);
+  return getDescriptionText.innerText;
+};
+getDescription();
+
+export const getPlans = () => {
+  const getPlansText = document.querySelector('.getPlans');
+  console.dir(getPlansText.innerHTML);
+  return getPlansText.innerHTML;
+};
+getPlans();
+
+export const getGoal = () => {
+  const getGoal = document.querySelector('.goal');
+  console.dir(getGoal.outerHTML);
+  return getGoal.outerHTML;
+};
+getGoal();
