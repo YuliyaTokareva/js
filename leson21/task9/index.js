@@ -21,4 +21,4 @@ export const finishList = () => {
   //toAddClassElem.children.classList.add('special');
   //toAddClassElem.classList.add('special');
 };
-finishList();
+//finishList();
