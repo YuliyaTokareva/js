@@ -1,4 +1,4 @@
-export const clearList = buttonText => {
+export const clearList = () => {
   const getText = document.querySelector('.categories');
   //const newHtml = getText.innerHTML;
   getText.innerHTML = ' ';
