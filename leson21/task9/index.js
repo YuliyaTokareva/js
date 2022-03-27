@@ -14,4 +14,4 @@ export const finishList = () => {
   liSecondElem.textContent = 6;
   toAddSecondElem.append(liSecondElem);
 };
-finishList();
+//finishList();
