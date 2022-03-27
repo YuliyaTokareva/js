@@ -5,4 +5,4 @@ export const clearList = () => {
   //console.dir(getText);
   //return getText;
 };
-clearList();
+//clearList();
