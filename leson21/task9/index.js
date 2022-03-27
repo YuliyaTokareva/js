@@ -16,8 +16,8 @@ export const finishList = () => {
   let liLastElem = document.createElement('li');
   liLastElem.textContent = 8;
   toAddLastElem.after(liLastElem);
-  const toAddClassElem = document.querySelector('.list');
-  toAddClassElem.setAttribute('class', 'alert-warning');
+  // const toAddClassElem = document.querySelector('.list');
+  // toAddClassElem.setAttribute('class', 'alert-warning');
   //toAddClassElem.children.classList.add('special');
   //toAddClassElem.classList.add('special');
 };
