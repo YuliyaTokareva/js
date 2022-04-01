@@ -43,14 +43,14 @@ const removeOn = () => {
 };
 removeBtn.addEventListener('click', removeOn);
 
-const attachBtn = document.querySelector('.attach-handlers-btn');
-const removeOff = () => {
-  const greenDiv = divEl.removeEventListener('click', logGreenDiv);
-  const greenP = pEl.removeEventListener('click', logGreenP);
-  const greenSpan = spanEl.removeEventListener('click', logGreenSpan);
+// const attachBtn = document.querySelector('.attach-handlers-btn');
+// const removeOff = () => {
+//   const greenDiv = divEl.removeEventListener('click', logGreenDiv);
+//   const greenP = pEl.removeEventListener('click', logGreenP);
+//   const greenSpan = spanEl.removeEventListener('click', logGreenSpan);
 
-  const greyDiv = divEl.removeEventListener('click', logGreyDiv, true);
-  const greyP = pEl.removeEventListener('click', logGreyP, true);
-  const greySpan = spanEl.removeEventListener('click', logGreySpan, true);
-};
-attachBtn.addEventListener('click', removeOff);
+//   const greyDiv = divEl.removeEventListener('click', logGreyDiv, true);
+//   const greyP = pEl.removeEventListener('click', logGreyP, true);
+//   const greySpan = spanEl.removeEventListener('click', logGreySpan, true);
+// };
+// attachBtn.addEventListener('click', removeOff);
