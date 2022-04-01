@@ -47,9 +47,9 @@ const removeOn = () => {
 removeBtn.addEventListener('click', removeOn);
 
 const attachBtn = document.querySelector('.attach-handlers-btn');
-const removeOff = () => {
-  greenDiv();
-  greenP();
-  greenSpan();
-};
-attachBtn.addEventListener('click', removeOff);
+// const removeOff = () => {
+//   greenDiv();
+//   greenP();
+//   greenSpan();
+// };
+// attachBtn.addEventListener('click', removeOff);
