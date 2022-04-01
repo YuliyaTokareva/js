@@ -33,23 +33,24 @@ clearBtn.addEventListener('click', clearInput);
 const removeBtn = document.querySelector('.remove-handlers-btn');
 
 const removeOn = () => {
-  const greenDiv = divEl.addEventListener('click', event => {
-    event.stopPropagation();
-  });
-  const greenP = pEl.addEventListener('click', event => {
-    event.stopPropagation();
-  });
+  const greenDiv = divEl.addEventListener('click', logGreenDiv);
+  const greenP = pEl.addEventListener('click', logGreenP);
+  const greenSpan = spanEl.addEventListener('click', logGreenSpan);
 
-  const greenSpan = spanEl.addEventListener('click', event => {
-    event.stopPropagation();
-  });
+  const greyDiv = divEl.addEventListener('click', logGreyDiv, true);
+  const greyP = pEl.addEventListener('click', logGreyP, true);
+  const greySpan = spanEl.addEventListener('click', logGreySpan, true);
 };
 removeBtn.addEventListener('click', removeOn);
 
 const attachBtn = document.querySelector('.attach-handlers-btn');
-// const removeOff = () => {
-//   greenDiv();
-//   greenP();
-//   greenSpan();
-// };
-// attachBtn.addEventListener('click', removeOff);
+const removeOff = () => {
+  const greenDiv = divEl.removeEventListener('click', logGreenDiv);
+  const greenP = pEl.removeEventListener('click', logGreenP);
+  const greenSpan = spanEl.removeEventListener('click', logGreenSpan);
+
+  const greyDiv = divEl.removeEventListener('click', logGreyDiv, true);
+  const greyP = pEl.removeEventListener('click', logGreyP, true);
+  const greySpan = spanEl.removeEventListener('click', logGreySpan, true);
+};
+attachBtn.addEventListener('click', removeOff);
