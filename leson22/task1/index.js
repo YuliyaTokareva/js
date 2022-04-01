@@ -30,10 +30,7 @@ const clearInput = () => {
 };
 clearBtn.addEventListener('click', clearInput);
 
-const removeBtn = document.querySelector('.clear-btn');
-// pEl.addEventListener('click', event => {
-//   event.stopPropagation;
-// });
+const removeBtn = document.querySelector('.remove-handlers-btn');
 
 const removeOn = () => {
   const greenDiv = divEl.addEventListener('click', event => {
@@ -46,15 +43,13 @@ const removeOn = () => {
   const greenSpan = spanEl.addEventListener('click', event => {
     event.stopPropagation();
   });
-
-  // const greyDiv = divEl.addEventListener('click', event => {
-  //   event.stopPropagation();
-  // });
-  // const greyP = pEl.addEventListener('click', event => {
-  //   event.stopPropagation();
-  // });
-  // const greySpan = spanEl.addEventListener('click', event => {
-  //   event.stopPropagation();
-  // });
 };
 removeBtn.addEventListener('click', removeOn);
+
+const attachBtn = document.querySelector('.attach-handlers-btn');
+const removeOff = () => {
+  greenDiv();
+  greenP();
+  greenSpan();
+};
+attachBtn.addEventListener('click', removeOff);
