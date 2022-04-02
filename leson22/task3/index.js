@@ -1,9 +1,9 @@
 'use strict';
 
-const btnEl = document.querySelector('.create-btn');
+const inputEl = document.querySelector('.text-input');
 
-const alertTxt = () => {
-  alert('done');
+const getTxt = () => {
+  console.log(inputEl.value);
 };
 
-btnEl.addEventListener('click', alertTxt);
+inputEl.addEventListener('input', getTxt);
