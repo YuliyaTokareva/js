@@ -6,4 +6,4 @@ const getTxt = () => {
   console.log(inputEl.value);
 };
 
-inputEl.addEventListener('input', getTxt);
+inputEl.addEventListener('change', getTxt);
