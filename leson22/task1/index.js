@@ -30,7 +30,7 @@ const clearInput = () => {
 };
 clearBtn.addEventListener('click', clearInput);
 
-const removeBtn = document.querySelector('.remove-handlers-btn');
+const removeBtn = document.querySelector('.attach-handlers-btn');
 
 const removeOn = () => {
   const greenDiv = divEl.addEventListener('click', logGreenDiv);
@@ -43,7 +43,7 @@ const removeOn = () => {
 };
 removeBtn.addEventListener('click', removeOn);
 
-const attachBtn = document.querySelector('.attach-handlers-btn');
+const attachBtn = document.querySelector('.remove-handlers-btn');
 const removeOff = () => {
   const greenDiv = divEl.removeEventListener('click', logGreenDiv);
   const greenP = pEl.removeEventListener('click', logGreenP);
