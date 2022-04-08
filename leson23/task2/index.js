@@ -30,7 +30,7 @@ const showSelectedSeat = e => {
   const getLine = selectEl.parentNode.dataset.line;
   const getSector = selectEl.parentNode.parentNode.dataset.sector;
 
-  boardElem.innerHTML = `${getSector} ${getLine} ${getSet}`;
+  boardElem.innerHTML = `${getSector} - ${getLine} - ${getSet}`;
 };
 seatEl.forEach(el => {
   el.addEventListener('click', showSelectedSeat);
