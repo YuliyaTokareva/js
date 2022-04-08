@@ -1,37 +1,58 @@
 const arenaElem = document.querySelector('.arena');
-const boardElem = document.querySelector('.board__selected-seat');
-
-const consrtuct = (sector, line, seat) => {
-  for (let s = 1; s <= sector; s++) {
-    const divSectorAdd = document.createElement('div');
-    divSectorAdd.setAttribute('class', 'sector');
-    divSectorAdd.setAttribute('data-sector', `S ${s}`);
-    arenaElem.append(divSectorAdd);
-    for (let l = 1; l <= line; l++) {
-      const divSectorLineAdd = document.createElement('div');
-      divSectorLineAdd.setAttribute('class', 'sector__line');
-      divSectorLineAdd.setAttribute('data-line', `L ${l}`);
-      divSectorAdd.append(divSectorLineAdd);
-      for (let i = 1; i <= seat; i++) {
-        const divSectorSeatAdd = document.createElement('div');
-        divSectorSeatAdd.setAttribute('class', 'sector__seat');
-        divSectorSeatAdd.setAttribute('data-seat', `S ${i}`);
-        divSectorLineAdd.append(divSectorSeatAdd);
-      }
-    }
+const generateNumbersRange = (from, to) => {
+  const result = [];
+  for (let i = from; i <= to; i++) {
+    result.push(i);
   }
+  return result;
 };
-consrtuct(3, 10, 10);
-//const showSelectedSeat = () => {};
-const seatEl = document.querySelectorAll('.sector__seat');
-const showSelectedSeat = e => {
-  const selectEl = e.target;
-  const getSet = e.target.dataset.seat;
-  const getLine = selectEl.parentNode.dataset.line;
-  const getSector = selectEl.parentNode.parentNode.dataset.sector;
 
-  boardElem.innerHTML = `${getSector} - ${getLine} - ${getSet}`;
+const getlineSeats = () => {
+  return generateNumbersRange(1, 10)
+    .map(
+      seatNumber => `
+  <div 
+  class="sector__seat" 
+  data-seat-number="${seatNumber}"></div>`
+    )
+    .join('');
 };
-seatEl.forEach(el => {
-  el.addEventListener('click', showSelectedSeat);
-});
+
+const getSectorLines = () => {
+  const seatString = getlineSeats();
+  return generateNumbersRange(1, 10)
+    .map(
+      lineNumber => `
+  <div 
+  class="sector__line" 
+  data-line-number="${lineNumber}">${seatString}</div>`
+    )
+    .join('');
+};
+
+const renderArena = () => {
+  const sectorString = getSectorLines();
+  const sectorsString = generateNumbersRange(1, 3)
+    .map(
+      sectorNumber => `
+  <div 
+  class="sector" 
+  data-sector-number="${sectorNumber}">${sectorString}</div>`
+    )
+    .join('');
+  arenaElem.innerHTML = sectorsString;
+};
+
+const boardElem = document.querySelector('.board__selected-seat');
+const onSeatSelect = event => {
+  const isSeat = event.target.classList.contains('sector__seat');
+  if (!isSeat) {
+    return;
+  }
+  const getSeat = event.target.dataset.seatNumber;
+  const getLine = event.target.closest('.sector__line').dataset.lineNumber;
+  const getSector = event.target.closest('.sector').dataset.sectorNumber;
+  boardElem.textContent = `S ${getSector} - L ${getLine} - S ${getSeat}`;
+};
+arenaElem.addEventListener('click', onSeatSelect);
+renderArena();
