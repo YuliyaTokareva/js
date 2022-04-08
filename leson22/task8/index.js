@@ -2,8 +2,8 @@
 
 const inputEl = document.querySelector('.text-input');
 
-const getTxt = () => {
-  console.log(inputEl.target.nodeName);
+const getTxt = e => {
+  console.log(e.target.value);
 };
 
 inputEl.addEventListener('change', getTxt);

@@ -6,5 +6,4 @@ const getTxt = () => {
   console.log(inputEl.checked);
 };
 
-inputEl.addEventListener('checked', getTxt);
-getTxt();
+inputEl.addEventListener('change', getTxt);
