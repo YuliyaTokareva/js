@@ -1,9 +1,9 @@
 const tasks = [
-  { text: 'Buy milk', done: false },
-  { text: 'Pick up Tom from airport', done: false },
-  { text: 'Visit party', done: false },
-  { text: 'Visit doctor', done: true },
-  { text: 'Buy meat', done: true },
+  { text: 'Buy milk', done: false, id: `0` },
+  { text: 'Pick up Tom from airport', done: false, id: `1` },
+  { text: 'Visit party', done: false, id: `2` },
+  { text: 'Visit doctor', done: true, id: `3` },
+  { text: 'Buy meat', done: true, id: `4` },
 ];
 
 const listElem = document.querySelector('.list');
@@ -11,9 +11,10 @@ const listElem = document.querySelector('.list');
 const renderTasks = tasksList => {
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done }) => {
+    .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
+      listItemElem.setAttribute('data-id', `${id}`);
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.checked = done;
@@ -34,18 +35,40 @@ renderTasks(tasks);
 // put your code here
 const inputElem = document.querySelector('.task-input');
 const btnElem = document.querySelector('.create-task-btn');
-
 const isInputEmpty = () => {
   const getInputTxt = inputElem.value;
 
   if (getInputTxt.length === 0) {
     return;
   }
-  const taskNew = { text: `${getInputTxt}`, done: false };
+  const idObj = Math.floor(Math.random() * (4000456000 - 456000)) + 456000;
+  const taskNew = { text: `${getInputTxt}`, done: false, id: `${idObj}` };
   tasks.push(taskNew);
   listElem.textContent = '';
   renderTasks(tasks);
   inputElem.value = '';
-  console.log(tasks);
 };
+
 btnElem.addEventListener('click', isInputEmpty);
+
+const updateArr = (num, status) => {
+  if (status === false) {
+    tasks[num].done = true;
+  }
+  if (status === true) {
+    tasks[num].done = false;
+  }
+};
+
+const editStatus = e => {
+  const getId = e.target.parentNode.dataset.id;
+  const changeStatus = tasks.map(el => {
+    if (el.id === getId) {
+      updateArr(tasks.indexOf(el), el.done);
+    }
+  });
+  listElem.innerHTML = '';
+  renderTasks(tasks);
+};
+
+listElem.addEventListener('change', editStatus);
