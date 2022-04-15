@@ -62,6 +62,10 @@ const updateArr = (num, status) => {
 
 const editStatus = e => {
   const getId = e.target.parentNode.dataset.id;
+  const isСheckbox = e.target.classList.contains('list__item-checkbox');
+  if (!isСheckbox) {
+    return;
+  }
   const changeStatus = tasks.map(el => {
     if (el.id === getId) {
       updateArr(tasks.indexOf(el), el.done);
@@ -69,6 +73,7 @@ const editStatus = e => {
   });
   listElem.innerHTML = '';
   renderTasks(tasks);
+  // console.log(tasks);
 };
 
-listElem.addEventListener('change', editStatus);
+listElem.addEventListener('click', editStatus);
