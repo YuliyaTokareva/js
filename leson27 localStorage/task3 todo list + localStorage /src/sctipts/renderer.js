@@ -1,11 +1,12 @@
+//import { createCheckboxElem } from './checkbox.js';
 import { getItem } from './storage.js';
 
 const listElem = document.querySelector('.list');
-
 export const renderTasks = () => {
-  const taskList = getItem('taskList') || [];
-  listElem.InnerHTML = '';
-  const tasksElems = taskList
+  const tasksList = getItem('tasksList') || [];
+  listElem.innerHTML = '';
+
+  const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
@@ -25,5 +26,3 @@ export const renderTasks = () => {
 
   listElem.append(...tasksElems);
 };
-
-//renderTasks();
