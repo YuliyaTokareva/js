@@ -6,7 +6,7 @@ const defaulAvatar = '';
 userAvatarElem.src = defaulAvatar;
 
 const fetchUserData = userName => {
-  return fetch(`https://api.github.com/users/${userName}`).then(response => response.json);
+  return fetch(`https://api.github.com/users/${userName}`).then(response => response.json());
 };
 
 const renderUserData = userData => {
