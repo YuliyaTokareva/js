@@ -15,7 +15,7 @@ export const onToggleTask = e => {
   const { text, createdDate } = tasksList.find(task => task.id === taskId);
   // { text, createdDate }
 
-  const done = e.target.cheked;
+  const done = e.target.checked;
   const updatedTask = {
     text,
     createdDate,

@@ -19,7 +19,13 @@ export const renderTasks = () => {
       if (done) {
         listItemElem.classList.add('list__item_done');
       }
-      listItemElem.append(checkbox, text);
+      const textElem = document.createElement('span');
+      textElem.classList.add('list__item-text');
+      textElem.textContent = text;
+
+      const deleteBtnElem = document.createElement('button');
+      deleteBtnElem.classList.add('list__item-delete-btn');
+      listItemElem.append(checkbox, textElem, deleteBtnElem);
 
       return listItemElem;
     });
