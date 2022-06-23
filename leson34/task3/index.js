@@ -19,7 +19,8 @@ const addNewUser = () => {
 allInput.forEach(el => {
   el.addEventListener('input', addNewUser);
 });
-const savedUser = () => {
+
+function savedUser() {
   const userEmail = document.querySelector('[type = "email"]').value;
   const userName = document.querySelector('[type="text"]').value;
   const userPassword = document.querySelector('[type="password"]').value;
@@ -28,10 +29,11 @@ const savedUser = () => {
     name: `${userName}`,
     password: `${userPassword}`,
   };
+  console.log(newUserData);
   return newUserData;
-};
+}
 function createUser(userData) {
-  fetch(baseUrl, {
+  return fetch(baseUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
@@ -41,11 +43,15 @@ function createUser(userData) {
 }
 
 const sendUser = event => {
+  event.preventDefault();
   const userData = savedUser();
-  console.log(userData);
+
   event.preventDefault();
   createUser(userData).then(() => {
-    alert(`${userData}`);
+    alert(JSON.stringify(userData));
+  });
+  allInput.forEach(el => {
+    el.value = '';
   });
 };
 
