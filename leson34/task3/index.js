@@ -48,11 +48,12 @@ const sendUser = event => {
 
   createUser(userData)
     .then(response => (response.ok === true ? response.json() : 'error'))
-    .then(response => alert(JSON.stringify(response)));
-
-  allInput.forEach(el => {
-    el.value = '';
-  });
+    .then(response => {
+      alert(JSON.stringify(response));
+      allInput.forEach(el => {
+        el.value = '';
+      });
+    });
 };
 
 submitButtonElem.addEventListener('click', sendUser);
