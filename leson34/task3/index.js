@@ -46,13 +46,9 @@ const sendUser = event => {
   event.preventDefault();
   const userData = savedUser();
 
-  createUser(userData).then(response => {
-    console.log(response);
-    if (response.ok === true) {
-      console.log(response);
-      alert(JSON.stringify(response));
-    }
-  });
+  createUser(userData)
+    .then(response => (response.ok === true ? response.json() : 'error'))
+    .then(response => alert(JSON.stringify(response)));
 
   allInput.forEach(el => {
     el.value = '';
