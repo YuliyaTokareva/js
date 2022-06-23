@@ -5,7 +5,7 @@ const formElem = document.querySelector('form');
 const allInput = document.querySelectorAll('.form-input');
 
 const validity = () => {
-  return formElem.reportValidity();
+  return formElem.checkValidity();
 };
 
 const addNewUser = () => {
