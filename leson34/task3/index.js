@@ -1,4 +1,4 @@
-const baseUrl = 'https://62ac36829fa81d00a7ac26c0.mockapi.io/api/v1/users';
+const baseUrl = 'https://62ac36829fa81d00a7ac26c0.mockapi.io/api/v1/usersLogins';
 
 const submitButtonElem = document.querySelector('.submit-button');
 const formElem = document.querySelector('form');
@@ -47,12 +47,11 @@ const sendUser = event => {
   const userData = savedUser();
 
   createUser(userData)
-    .then(response => (response.ok === true ? response.json() : 'error'))
+    // .then(response => (response.ok === true ? response.json() : throw new Error 'error'))
+    .then(response => response.json())
     .then(response => {
       alert(JSON.stringify(response));
-      allInput.forEach(el => {
-        el.value = '';
-      });
+      formElem.reset();
     });
 };
 
