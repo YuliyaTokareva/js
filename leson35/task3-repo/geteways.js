@@ -12,6 +12,7 @@ export const fetchRepositories = url => {
     if (response.ok) {
       return response.json();
     }
-    throw new Error('Failed to load data');
+    //throw new Error('Failed to load data');
+    alert('Failed to load data');
   });
 };
