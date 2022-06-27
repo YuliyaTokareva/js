@@ -27,6 +27,8 @@ const onSearchUser = () => {
       return fetchRepositories(url);
     })
     .then(reposList => {
+      renderRepos(reposList);
+      //console.log(renderRepos(reposList));
       hideSpinner();
       userInputElem.value = '';
     })
